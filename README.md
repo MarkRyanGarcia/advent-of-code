@@ -9,6 +9,7 @@ Welcome to my repository of **Advent of Code** solutions! 🎁
 ### 🔧 Structure
 The repository is organized by year and day:
 
+```
 ├── 2024/
 │   ├── day01/
 │   │   ├── sol.py
@@ -23,6 +24,7 @@ The repository is organized by year and day:
 │   │   └── in.txt
 │   └── ...
 └── README.md
+```
 
 ## 🎅 Thanks for Stopping By!
 Happy coding, and may your holidays be filled with joy and successful test cases! 🧑‍💻✨
