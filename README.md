@@ -28,7 +28,8 @@ The repository is organized by year and day:
 │   │   ├── sol.py
 │   │   └── in.txt
 │   └── ...
-└── README.md
+├── README.md
+└── runall.sh
 ```
 
 ## 🎅 Thanks for Stopping By!
