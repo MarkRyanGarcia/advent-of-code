@@ -30,16 +30,15 @@ print(f"part1: {res}")
 
 
 def fix_update(update):
-    fixed = update.copy()
     swapped = True    
     while swapped:
         swapped = False
         for i in range(len(update)):
             for j in range(i + 1, len(update)):
-                if (fixed[j], fixed[i]) in rules:
-                    fixed[i], fixed[j] = fixed[j], fixed[i]
+                if (update[j], update[i]) in rules:
+                    update[i], update[j] = update[j], update[i]
                     swapped = True
-    return fixed
+    return update
 
 
 res2 = 0
