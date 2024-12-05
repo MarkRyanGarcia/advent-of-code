@@ -6,7 +6,12 @@ Welcome to my repository of **Advent of Code** solutions! 🎁
 
 [Advent of Code](https://adventofcode.com/) is an advent calendar for programmers. Every day from December 1st to December 25th, a new two-part programming puzzle is released. Each puzzle is designed to be solvable in any programming language and at varying levels of difficulty.
 
-### 🔧 Structure
+### 🔧 Run Script
+
+The runall.sh script automates the process of executing all solution scripts for a specified year in the repository. If no year is provided, the script defaults to the current year.
+Use `./runall.sh` to run.
+
+### 📂 Structure
 The repository is organized by year and day:
 
 ```
