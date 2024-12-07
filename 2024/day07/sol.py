@@ -41,7 +41,8 @@ def part2():
 
     with alive_bar(total_combinations) as bar:
         for total, nums in data:
-            possibilities = product(ops, repeat=len(nums) - 1)
+            possibilities = list(product(ops, repeat=len(nums) - 1))  # Convert to list to calculate length
+            remaining = len(possibilities)  # Track remaining iterations
             for p in possibilities:
                 temp = nums[0]
                 for n in range(len(nums) - 1):
@@ -53,9 +54,10 @@ def part2():
                         temp = int(str(temp) + str(nums[n + 1]))
                 if temp == total:
                     res += total
-                    bar()
+                    bar(remaining)  # Decrement bar by remaining iterations
                     break
-                bar()
+                bar()  # Increment bar for each checked possibility
+                remaining -= 1  # Decrement remaining count
     return res
 
 print(f"part2: {part2()}")
