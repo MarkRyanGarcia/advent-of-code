@@ -12,7 +12,7 @@ def isInvalid2(num):
         thing = thing[0:-1]
     return False
 
-with open("in2.txt", 'r') as file:
+with open("in.txt", 'r') as file:
     for line in file:
         ranges = line.strip().split(',')
         for r in ranges:
