@@ -1,5 +1,3 @@
-from copy import deepcopy
-
 directions = [
     (-1, -1), (0, -1), (1, -1),
     (-1,  0),          (1,  0),
@@ -26,19 +24,22 @@ def part1(g):
 def part2(g):
     res = 0
     m, n = len(g), len(g[0])
-    temp = deepcopy(g)
-    for r in range(m):
-        for c in range(n):
-            if g[r][c] == '@':
-                neighbors = 0
-                for dx, dy in directions:
-                    i, j = r+dx, c+dy
-                    if i in range(m) and j in range(n) and (g[i][j] == '@'):
-                        neighbors += 1
-                if neighbors < 4:
-                    res += 1
-                    g[r][c] = 'x'
-    return res + part2(g) if temp != g else res
+    while True:
+        temp = res
+        for r in range(m):
+            for c in range(n):
+                if g[r][c] == '@':
+                    neighbors = 0
+                    for dx, dy in directions:
+                        i, j = r+dx, c+dy
+                        if i in range(m) and j in range(n) and (g[i][j] == '@'):
+                            neighbors += 1
+                    if neighbors < 4:
+                        res += 1
+                        g[r][c] = 'x'
+        if temp == res:
+            break
+    return res
 
 with open("in.txt", 'r') as file:
     for line in file:
