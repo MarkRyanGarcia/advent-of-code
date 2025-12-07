@@ -54,7 +54,7 @@ def part2(file):
         i += 1
     return res
 
-with open("in.txt", 'r') as file:
-    f = file.readlines()
-    print(f"part1: {part1(f)}")
-    print(f"part2: {part2(f)}")
+file = open("in.txt").readlines()
+
+print(f"part1: {part1(file)}")
+print(f"part2: {part2(file)}")
