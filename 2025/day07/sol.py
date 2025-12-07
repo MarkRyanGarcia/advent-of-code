@@ -31,22 +31,18 @@ def part2(grid) -> int:
 
     for r in range(1, m-1):
         for c in range(n):
-            k = counts[r][c]
-            if k == 0:
+            i = counts[r][c]
+            if i == 0:
                 continue
             below = grid[r+1][c]
             if below == '.':
-                counts[r+1][c] += k
+                counts[r+1][c] += i
             elif below == '^':
                 if c-1 in range(n):
-                    counts[r+1][c-1] += k
+                    counts[r+1][c-1] += i
                 if c+1 in range(n):
-                    counts[r+1][c+1] += k
+                    counts[r+1][c+1] += i
     return sum(counts[m-1])
-
-def print2(grid):
-    for row in grid:
-        print(row)
 
 lines = open("in.txt").readlines()
 grid = []
