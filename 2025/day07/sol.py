@@ -1,4 +1,3 @@
-from copy import deepcopy
 def part1(grid):
     m, n = len(grid), len(grid[0])
     s_idx = n//2
@@ -49,15 +48,9 @@ def part2(grid) -> int:
                         grid[r+1][c+1] = i
     return sum([x for x in grid[m-1] if type(x) == int])
 
-def printgrid(grid):
-    for row in grid:
-        r = [str(x) for x in row]
-        print(r)
-
 lines = open("in.txt").readlines()
 grid = []
 for line in lines:
     grid.append([x for x in line.rstrip('\n')])
-grid2 = deepcopy(grid)
 print(f"part1: {part1(grid)}")
-print(f"part2: {part2(grid2)}")
+print(f"part2: {part2(grid)}")
